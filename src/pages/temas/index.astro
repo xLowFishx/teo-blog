@@ -6,8 +6,6 @@ const mdPosts = Object.values(
 );
 const allTags = mdPosts.map((post: any) => post.frontmatter.tags).flat();
 const uniqueTags = [...new Set(allTags)];
-
-// TODO: Receive a param that tells wether to display the post inline or in block.
 ---
 
 <WebBaseLayout pageTitle="Temas">
@@ -32,6 +30,7 @@ const uniqueTags = [...new Set(allTags)];
     color: #00539f;
   }
 
+  /* TODO: Receive a param that tells wether to display the post inline or in block. */
   .tags {
     display: flex;
     flex-wrap: wrap;
