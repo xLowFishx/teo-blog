@@ -10,12 +10,12 @@ const uniqueTags = [...new Set(allTags)];
 // TODO: Receive a param that tells wether to display the post inline or in block.
 ---
 
-<WebBaseLayout pageTitle="Tags">
-  <div>
+<WebBaseLayout pageTitle="Temas">
+  <div class="tags">
     {
       uniqueTags.map((tag: any) => (
-        <p class="tags">
-          <a class="tag" href={`/tags/${tag}`}>
+        <p>
+          <a class="tag" href={`/temas/${tag}`}>
             {tag}
           </a>
         </p>

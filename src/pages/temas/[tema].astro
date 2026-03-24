@@ -16,18 +16,18 @@ export async function getStaticPaths() {
       post.frontmatter.tags.includes(tag),
     );
     return {
-      params: { tag },
+      params: { tema: tag },
       props: { posts: filteredPosts },
     };
   });
 }
 
-const { tag } = Astro.params;
+const { tema } = Astro.params;
 const { posts } = Astro.props;
 ---
 
-<WebBaseLayout pageTitle={tag}>
-  <p>Posts tagged with {tag}</p>
+<WebBaseLayout pageTitle={tema}>
+  <p>Posts tagged with {tema}</p>
   {
     posts?.map((post: any) => {
       return <BlogPost postURL={post.url} postTitle={post.frontmatter.title} />
