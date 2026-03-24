@@ -1,6 +1,7 @@
 ---
 import "../styles/global.css";
 import WebBaseLayout from "../layouts/WebBaseLayout.astro";
+import BlogPostSuggestion from "../components/BlogPostSuggestion";
 
 const pageTitle = "Inicio";
 
@@ -12,7 +13,7 @@ const recentBlogs = [...blogsData].sort(
 	(blogDataA: any, blogDataB: any) =>
 		new Date(blogDataA.frontmatter.pubDate).getTime() -
 		new Date(blogDataB.frontmatter.pubDate).getTime(),
-);
+).slice(0, 3);
 ---
 
 <WebBaseLayout pageTitle={pageTitle}>
@@ -23,7 +24,7 @@ const recentBlogs = [...blogsData].sort(
 		cristiana.
 	</p>
 
-	Blogs recientes:
+	<h3>Blogs recientes:</h3>
 	<ul>
 		{
 			recentBlogs.map((blogData: any) => (
@@ -35,4 +36,6 @@ const recentBlogs = [...blogsData].sort(
 			))
 		}
 	</ul>
+
+	<BlogPostSuggestion client:load />
 </WebBaseLayout>
