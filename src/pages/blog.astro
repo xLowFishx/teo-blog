@@ -1,0 +1,20 @@
+---
+import "../styles/global.css";
+
+import WebBaseLayout from "../layouts/WebBaseLayout.astro";
+import BlogPost from "../components/BlogPost.astro";
+
+const pageTitle = "Blog";
+const posts = Object.values(import.meta.glob("./posts/*.md", { eager: true }));
+---
+
+<WebBaseLayout pageTitle={pageTitle}>
+  <h1>Entradas del {pageTitle}</h1>
+  <ul>
+    {
+      posts.map((post: any) => (
+        <BlogPost postURL={post.url} postTitle={post.frontmatter.title} />
+      ))
+    }
+  </ul>
+</WebBaseLayout>

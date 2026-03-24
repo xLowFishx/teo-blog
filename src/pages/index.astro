@@ -1,17 +1,23 @@
 ---
+import "../styles/global.css";
 
+import WebBaseLayout from "../layouts/WebBaseLayout.astro";
+
+const pageTitle = "Inicio";
 ---
 
-<html lang="en">
-	<head>
-		<meta charset="utf-8" />
-		<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
-		<link rel="icon" href="/favicon.ico" />
-		<meta name="viewport" content="width=device-width" />
-		<meta name="generator" content={Astro.generator} />
-		<title>Astro</title>
-	</head>
-	<body>
-		<h1>Un blog de Teo</h1>
-	</body>
-</html>
+<WebBaseLayout pageTitle={pageTitle}>
+	<h1>El blog Teo</h1>
+
+	<p>
+		Un blog de teología, apologética, y otros temas relacionados con la vida
+		cristiana.
+	</p>
+
+	Blogs recientes:
+	<ul>
+		<li><a href="/posts/post-1">Post 1</a></li>
+		<li><a href="/posts/post-2">Post 2</a></li>
+		<li><a href="/posts/post-3">Post 3</a></li>
+	</ul>
+</WebBaseLayout>

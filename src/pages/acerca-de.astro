@@ -1,0 +1,57 @@
+---
+import "../styles/global.css";
+
+import WebBaseLayout from "../layouts/WebBaseLayout.astro";
+
+const pageTitle = "Acerca de";
+const lightGreen = "lightgreen";
+---
+
+<WebBaseLayout pageTitle={pageTitle}>
+  <h1>{pageTitle}</h1>
+  <p>
+    Este blog nace repentinamente después de poco más de una decada de
+    cristiano. Durante años pensé en como centralizar lo que iba aprendiendo,
+    intenté varias cosas; apuntes en libretas, archivos electrónicos, y
+    aplicaciones, sin embargo con el tiempo, lo aprendido, se perdia, revolvia,
+    repetia, o en el peor de los casos se perdía/olvidaba.
+  </p>
+
+  <p>
+    Hasta que un Viernes 13 de Marzo en una celula de matrimonios en la casa
+    donde vivo en Zapopan Jalisco México, surgió una pregunta interesante que me
+    llamó la atención contestar. Y después pensé en publicar la respuesta por si
+    le pudiera servir a otros, pero al mismo tiempo con el objetivo de registrar
+    poco de lo que aprendo para que un día yo, mis hijos o alguién más pueda
+    acceder a esto y por gracia de Dios le sea de beneficio para su vida
+    espiritual y física.
+  </p>
+
+  <p>
+    No planeo responder todas las preguntas teologicas que existen, pero sí
+    escribir de aquellas que me llaman la atención, para centralizar lo poco que
+    conozco, y en el proceso si resulta de beneficio para alguién más, que mejor
+  </p>
+
+  <p class="green-bold">
+    Pero que es el interne sino una comunidad digital, y la iglesia sino una
+    espiritual, entonces, habiendo dicho esto, sientanse con la libertad de
+    enviar temas o preguntas que les gustaría ver escrito en este blog, y quiza,
+    con la ayuda de Dios, y el tiempo suficiente pueda apartar tiempo para
+    responderlas, lo cual honestamente sí me encantaría
+  </p>
+
+  <a href="/sugerencias">Deja tu pregunta o tema aqui</a>
+</WebBaseLayout>
+
+<style define:vars={{ lightGreen }}>
+  h1 {
+    color: purple;
+    font-size: 4em;
+  }
+
+  .green-bold {
+    color: var(--lightGreen);
+    font-weight: bold;
+  }
+</style>

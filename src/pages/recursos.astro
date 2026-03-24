@@ -1,0 +1,25 @@
+---
+import "../styles/global.css";
+
+import WebBaseLayout from "../layouts/WebBaseLayout.astro";
+import DigitalResource from "../components/DigitalResource.astro";
+
+const pageTitle = "Recursos";
+---
+
+<WebBaseLayout pageTitle={pageTitle}>
+  <p>
+    Aquí se mostrará la bibliograf&iacute;a que se ha usado para responder las
+    preguntas del blog.
+  </p>
+
+  <h2>Recursos Digitales</h2>
+  <ul>
+    <li>
+      <DigitalResource
+        resourceRef="https://www.coalicionporelevangelio.org/"
+        resourceName="Coalición por el Evangelio"
+      />
+    </li>
+  </ul>
+</WebBaseLayout>
