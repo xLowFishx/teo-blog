@@ -1,0 +1,48 @@
+---
+import WebBaseLayout from "../../layouts/WebBaseLayout.astro";
+
+const mdPosts = Object.values(
+  import.meta.glob("../posts/*.md", { eager: true }),
+);
+const allTags = mdPosts.map((post: any) => post.frontmatter.tags).flat();
+const uniqueTags = [...new Set(allTags)];
+
+// TODO: Receive a param that tells wether to display the post inline or in block.
+---
+
+<WebBaseLayout pageTitle="Tags">
+  <div>
+    {
+      uniqueTags.map((tag: any) => (
+        <p class="tags">
+          <a class="tag" href={`/tags/${tag}`}>
+            {tag}
+          </a>
+        </p>
+      ))
+    }
+  </div>
+  <!-- <pre>{JSON.stringify(uniqueTags, null, 2)}</pre>
+  <pre>{JSON.stringify(allTags, null, 2)}</pre>
+  <pre>{JSON.stringify(mdPosts, null, 2)}</pre> -->
+</WebBaseLayout>
+
+<style>
+  a {
+    color: #00539f;
+  }
+
+  .tags {
+    display: flex;
+    flex-wrap: wrap;
+  }
+
+  .tag {
+    margin: 0.25em;
+    border: dotted 1px #a1a1a1;
+    border-radius: 0.5em;
+    padding: 0.5em 1em;
+    font-size: 1.15em;
+    background-color: #f8fcfd;
+  }
+</style>
